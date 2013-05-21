@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.container
+        h1 Start Stream
+        div.span12
+            div.container
+                h6 Stream View
+                video(id='local-webrtc', width="320", height="240", autoplay='autoplay')
+                h6 Limited View
+                canvas(id='local-canvas', width="320", height="240")
+            div.container
+                span Enter your Stream Name
+                input(id='friendlyName', type='text', placeholder='Stream Name', width='100%')
+            div.container
+                span Make Stream Public?
+                    input(id='makePublic', type="checkbox", name="Public?")
+            div.container
+                a#link
+                    span View your stream
+    script(src='/scripts/webrtc.io.js')
+    script(src='/scripts/socket.io.js')
+    script(src='/scripts/StartStream.js')
